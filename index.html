@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+         <meta charset="UTF-8"/>
+         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+         <link rel="stylesheet" type="text/css" href="style.css">
+         <meta id="viewport" name="viewport" content="width=device-width, user-scalable=no">
+         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+        
+         <title>Dashboard</title>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="navigation">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <span class="icon"><i class="fas fa-print"></i></span>
+                            <span class="title"><h2>Prático Design</h2></span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <span class="icon"><i class="fas fa-home"></i></span>
+                            <span class="title">Dashboard</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <span class="icon"><i class="fas fa-dolly-flatbed"></i></i></span>
+                            <span class="title">Produtos</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <span class="icon"><i class="fas fa-users"></i></span>
+                            <span class="title">Clientes</span> 
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <span class="icon"><i class="fas fa-coins"></i></span>
+                            <span class="title">Vendas</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <span class="icon"><i class="fas fa-money-bill-wave"></i></span>
+                            <span class="title">Centro financeiro</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <span class="icon"><i class="fas fa-question-circle"></i></span>
+                            <span class="title">Ajuda</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <span class="icon"><i class="fas fa-cog"></i></span>
+                            <span class="title">Configurações</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <span class="icon"><i class="fas fa-lock"></i></span>
+                            <span class="title">Senha</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <span class="icon"><i class="fas fa-sign-out-alt"></i></span>
+                            <span class="title">Sair</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="main">
+                <div class="topbar">
+                    <div class="toggle" onclick="toggleMenu();"></div>
+                    <div class="search">
+                        <label>
+                            <input type="text" placeholder="Pesquise aqui">
+                            <i class="fas fa-search"></i>
+                        </label>
+                    </div>
+    
+                    <div class="user">
+                        <img src="imagens/user.png">
+                    </div>
+                </div>
+    
+                <div class="cardBox">
+                    <div class="card">
+                        <div>
+                            <div class="numbers">5</div>
+                            <div class="cardName">Total de Produtos</div>
+                        </div>
+                        
+                        <div class="iconBox">
+                            <i class="fab fa-stack-overflow"></i>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div>
+                            <div class="numbers">680</div>
+                            <div class="cardName">Qtd. Produtos em Estoque</div>
+                        </div>
+                        
+                        <div class="iconBox">
+                            <i class="fas fa-dolly-flatbed"></i>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div>
+                            <div class="numbers">R$ 315</div>
+                            <div class="cardName">Custo Total</div>
+                        </div>
+                        
+                        <div class="iconBox">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div>
+                            <div class="numbers">R$ 425</div>
+                            <div class="cardName">Receita Total</div>
+                        </div>
+                        
+                        <div class="iconBox">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="details">
+                    <div class="recentOrders">
+                        <div class="cardHeader">
+                            <h2>Produtos</h2>
+                            <button href="#" class="btn" id="open">Cadastrar +</button>
+
+                            <div class="modal-container" id="modal_container">
+                                <div class="modal">
+                                    <i class="fas fa-times sair" id="close"></i>
+                                    <h1>Cadastre um Produto</h1>
+
+                                    <table>
+                                        <tr class="modal_form">
+                                            <td>
+                                                <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
+                                                    <div>
+                                                        <label>Nome *</label>
+                                                        <label class="validation-error hide" id="fullNameValidationError">
+                                                            Campo obrigatório
+                                                        </label>
+                                                        <input type="text" name="fullName" id="fullName">
+                                                    </div>
+
+                                                    <div>
+                                                        <label>Unidade de medida *</label>
+                                                        <label class="validation-error hide" id="uni_medidaValidationError">
+                                                            Campo obrigatório
+                                                        </label>
+                                                        <input type="text" name="uni_medida" id="uni_medida">
+                                                    </div>
+
+                                                    <div>
+                                                        <label>Quantidade *</label>
+                                                        <label class="validation-error hide" id="quantidadeValidationError">
+                                                            Campo obrigatório
+                                                        </label>
+                                                        <input type="text" name="quantidade" id="quantidade">
+                                                    </div>
+
+                                                    <div>
+                                                        <label>Preço de custo *</label>
+                                                        <label class="validation-error hide" id="preco_custoValidationError">
+                                                            Campo obrigatório
+                                                        </label>
+                                                        <input type="text" name="preco_custo" id="preco_custo">
+                                                    </div>
+
+                                                    <div>
+                                                        <label>Preço cliente final *</label>
+                                                        <label class="validation-error hide" id="preco_cliente_finalValidationError">
+                                                            Campo obrigatório
+                                                        </label>
+                                                        <input type="text" name="preco_cliente_final" id="preco_cliente_final">
+                                                    </div>
+
+                                                    <div>
+                                                        <label>Preço cliente terceirizado *</label>
+                                                        <label class="validation-error hide" id="preco_cliente_terceirizadoValidationError">
+                                                            Campo obrigatório
+                                                        </label>
+                                                        <input type="text" name="preco_cliente_terceirizado" id="preco_cliente_terceirizado">
+                                                    </div>
+
+                                                    <div>
+                                                        <label>Desconto máximo *</label>
+                                                        <label class="validation-error hide" id="desconto_maxValidationError">
+                                                            Campo obrigatório
+                                                        </label>
+                                                        <input type="text" name="desconto_max" id="desconto_max">
+                                                    </div>
+
+                                                    <button class="btn_modal">
+                                                        Cadastrar
+                                                    </button>
+                                                </form>
+                                            </td>
+                                        </tr>
+
+                                        
+
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <table class="list" id="productList">
+                            <thead>
+                                <tr>
+                                    <td>Nome</td>
+                                    <td>Unid. Medida</td>
+                                    <td>Qtd.</td>
+                                    <td>Preço de custo</td>
+                                    <td>Preço cliente final</td>
+                                    <td>Preço cliente terceirizado</td>
+                                    <td>Desconto máximo</td>
+                                    <td></td>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td>Banner</td>
+                                    <td>m²</td>
+                                    <td>100</td>
+                                    <td>R$ 70</td>
+                                    <td>R$ 100</td>
+                                    <td>R$ 90</td>
+                                    <td>5%</td>
+                                    <td>
+                                        <i class="fas fa-edit icone-editar"></i>
+                                        <i class="fas fa-trash icone-remover"></i>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Adesivo</td>
+                                    <td>unidade</td>
+                                    <td>200</td>
+                                    <td>R$ 10</td>
+                                    <td>R$ 20</td>
+                                    <td>R$ 15</td>
+                                    <td>2%</td>
+                                    <td>
+                                        <i class="fas fa-edit icone-editar"></i>
+                                        <i class="fas fa-trash icone-remover"></i>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Folheto</td>
+                                    <td>unidade</td>
+                                    <td>300</td>
+                                    <td>R$ 15</td>
+                                    <td>R$ 25</td>
+                                    <td>R$ 20</td>
+                                    <td>3%</td>
+                                    <td>
+                                        <i class="fas fa-edit icone-editar"></i>
+                                        <i class="fas fa-trash icone-remover"></i>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Banner</td>
+                                    <td>m²</td>
+                                    <td>50</td>
+                                    <td>R$ 70</td>
+                                    <td>R$ 100</td>
+                                    <td>R$ 90</td>
+                                    <td>5%</td>
+                                    <td>
+                                        <i class="fas fa-edit icone-editar"></i>
+                                        <i class="fas fa-trash icone-remover"></i>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Lona</td>
+                                    <td>m</td>
+                                    <td>30</td>
+                                    <td>R$ 150</td>
+                                    <td>R$ 180</td>
+                                    <td>R$ 130</td>
+                                    <td>6%</td>
+                                    <td>
+                                        <i class="fas fa-edit icone-editar"></i>
+                                        <i class="fas fa-trash icone-remover"></i>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+        
+                   
+                </div>
+            </div>
+        </div>
+
+        
+
+     	<script src="produtos.js"></script> 
+    </body>
+</html>
+
